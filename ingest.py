@@ -23,6 +23,7 @@ def ingest_pdf(pdf_path: str, index_dir: str = "data/faiss_index", chunk_size: i
 
     vectorstore.save_local(index_dir)
 
+    
     return vectorstore
 
 def load_vectorstore(index_dir: str = "data/faiss_index"):
