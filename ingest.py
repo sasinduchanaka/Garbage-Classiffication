@@ -10,25 +10,4 @@ def ingest_pdf(pdf_path: str, index_dir: str = "data/faiss_index", chunk_size: i
     Load a PDF, split into chunks, embed with OpenAIEmbeddings, and build a FAISS vectorstore saved under index_dir.
     Returns the vectorstore instance.
     """
-    Path(index_dir).mkdir(parents=True, exist_ok=True)
 
-    loader = PyPDFLoader(pdf_path)
-    documents = loader.load()
-
-    text_splitter = RecursiveCharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=chunk_overlap)
-    docs = text_splitter.split_documents(documents)
-
-    embeddings = OpenAIEmbeddings()
-    vectorstore = FAISS.from_documents(docs, embeddings)
-
-    vectorstore.save_local(index_dir)
-
-    
-    return vectorstore
-
-def load_vectorstore(index_dir: str = "data/faiss_index"):
-    """
-    Load a previously saved FAISS index from disk.
-    """
-    embeddings = OpenAIEmbeddings()
-    return FAISS.load_local(index_dir, embeddings)
