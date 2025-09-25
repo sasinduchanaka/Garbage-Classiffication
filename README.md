@@ -103,9 +103,10 @@ waste detection app/
 
 Home Page  
 
-![Home](assets/home.png)  
 
-Classification Result  
+
+Classification Result  <img width="1898" height="967" alt="Screenshot 2025-09-26 015909" src="https://github.com/user-attachments/assets/f656a8e2-dec0-458e-8b6f-95e265e7938e" />
+
 
 ![Result](assets/result.png)  
 
