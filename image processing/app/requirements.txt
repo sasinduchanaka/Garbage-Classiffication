@@ -1,0 +1,9 @@
+Flask
+numpy
+opencv-python
+tensorflow
+pandas
+matplotlib
+fpdf
+scikit-learn
+ultralytics
