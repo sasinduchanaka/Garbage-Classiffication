@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classification Result</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <style>
+    /* Full-page Gradient Background */
+    body {
+      background: radial-gradient(circle at top left, #0f2027, #203a43, #2c5364);
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      color: #f0f0f0;
+      min-height: 100vh;
+      text-align: center;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    /* Title */
+    h2 {
+      font-weight: 700;
+      font-size: 2.3rem;
+      color: #00ffcc;
+      text-shadow: 0px 0px 8px rgba(0, 255, 204, 0.7);
+      margin-bottom: 20px;
+    }
+
+    /* Image */
+    .result-image {
+      border: 2px solid #00ffcc;
+      border-radius: 12px;
+      max-width: 60%;
+      margin: 20px auto;
+      display: block;
+      box-shadow: 0px 6px 20px rgba(0, 255, 200, 0.5);
+    }
+
+    /* Prediction Text */
+    h3 span {
+      color: #00e6b8;
+      text-shadow: 0px 0px 6px rgba(0, 255, 200, 0.6);
+    }
+
+    h5 {
+      color: #cccccc;
+    }
+
+    /* Alerts */
+    .alert {
+      border-radius: 12px;
+      font-size: 1.1rem;
+      padding: 18px;
+      font-weight: 500;
+      margin: 25px auto;
+      max-width: 700px;
+      animation: glowBox 2s infinite alternate;
+    }
+
+    .alert-success {
+      background: rgba(0, 255, 200, 0.1);
+      border: 1px solid #00ffcc;
+      color: #00ffcc;
+    }
+
+    .alert-danger {
+      background: rgba(255, 50, 120, 0.1);
+      border: 1px solid #ff6a95;
+      color: #ff6ab5;
+    }
+
+    /* Button */
+    .btn {
+      font-size: 1.1rem;
+      padding: 12px 24px;
+      border-radius: 14px;
+      font-weight: 600;
+      transition: all 0.3s ease-in-out;
+      margin-top: 20px;
+    }
+
+    .btn-success {
+      background: linear-gradient(90deg, #00c9ff, #92fe9d);
+      border: none;
+      color: #0d0d0d;
+    }
+    .btn-success:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 0px 15px rgba(0, 255, 200, 0.8);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes glowBox {
+      from { box-shadow: 0 0 12px rgba(0, 255, 200, 0.5); }
+      to { box-shadow: 0 0 20px rgba(0, 255, 200, 0.9); }
+    }
+  </style>
+</head>
+<body>
+  <h2>✅ Classification Result</h2>
+
+  <!-- Classified Image -->
+  <img src="{{ url_for('static', filename='uploads/' + image) }}" class="result-image">
+
+  <!-- Predicted Class & Confidence -->
+  <h3 class="mt-4">Predicted Class: <span>{{ label }}</span></h3>
+  <h5>Confidence: {{ confidence }}</h5>
+
+  <!-- Result Message -->
+  {% if label.lower() in ["plastic", "metal", "green-glass", "white-glass", "brown-glass"] %}
+    <div class="alert alert-success shadow-sm">
+      ♻️ <b>Recyclable:</b> Please place this item in the <b>Recycling Bin</b>.
+    </div>
+  {% else %}
+    <div class="alert alert-danger shadow-sm">
+      🚮 <b>General Waste:</b> Please dispose of this item in the <b>General Waste Bin</b>.
+    </div>
+  {% endif %}
+
+  <!-- Action Button -->
+  <a href="/" class="btn btn-success">♻️Go Back/Upload Image♻️</a>
+</body>
+</html>

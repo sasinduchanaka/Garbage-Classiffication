@@ -1,0 +1,9 @@
+Waste Classification Report
+Total Items Processed: 26
+trash: 5
+metal: 3
+shoes: 7
+biological: 5
+paper: 2
+brown-glass: 3
+white-glass: 1
