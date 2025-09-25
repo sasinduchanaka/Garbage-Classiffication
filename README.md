@@ -108,15 +108,16 @@ Home Page
 Classification Result  <img width="1898" height="967" alt="Screenshot 2025-09-26 015909" src="https://github.com/user-attachments/assets/f656a8e2-dec0-458e-8b6f-95e265e7938e" />
 
 
-![Result](assets/result.png)  
+
 
 Statistics Dashboard  
+<img width="1897" height="978" alt="details" src="https://github.com/user-attachments/assets/cf6db67f-eab0-4bab-bbdf-509ddcdc2e8e" />
 
-![Stats](assets/stats.png)  
 
-(Note: Add screenshots to an assets/ folder for README display.)  
+
 
 ---
+<img width="1918" height="972" alt="result" src="https://github.com/user-attachments/assets/20d2ec01-7d77-4c1f-8e2e-09b763185021" />
 
 
 
