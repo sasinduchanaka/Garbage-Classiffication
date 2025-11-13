@@ -23,7 +23,7 @@ The system is powered by:
 
 Waste categories are classified into recyclable (plastic, glass, metal, paper) and non-recyclable (trash, organic, etc.) classes.  
 
----
+-----
 
 ## 📦 Installation
 
