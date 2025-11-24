@@ -2,7 +2,7 @@
 
 An intelligent web application for automated waste classification using *deep learning*. Users can upload images of waste items, and the system will predict their category (plastic, glass, metal, trash, etc.). The app also provides interactive statistics and downloadable reports to streamline waste management and support environmental sustainability.
 
----
+------
 
 ## 🚀 Features
 
